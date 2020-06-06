@@ -1,19 +1,127 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
+    <title>Weather App</title>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="styles.css" />
+    <script
+      src="https://kit.fontawesome.com/efee7791c5.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <title>Vanilla Weather Project</title>
   </head>
+
   <body>
-      <div class="container">
-    <h1>
-      Hello!
-    </h1>
+    <div class="container">
+      <div class="weather-app">
+        <form id="search-form">
+          <input
+            type="search"
+            placeholder="Enter City Here"
+            autocomplete="off"
+            autofocus="on"
+            id="city-form"
+          />
+        </form>
+        <div class="row">
+          <div class="col-6" id="current-button">
+            <input type="button" value="Current" class="button" />
+          </div>
+          <div class="col-6" id="search-button">
+            <input type="button" value="Search" class="button" />
+          </div>
+        </div>
+        <hr />
+        <div class="row">
+          <div class="col-6">
+            <div class="currentWeather">
+              <i class="fas fa-cloud"></i>
+            </div>
+          </div>
+          <div class="col-6">
+            <h1 id="city">
+              Madison, Wi
+            </h1>
+            <h3>
+              <div class="currentTemperature">
+                <span id="temp-value">66</span>
+                <a href="#" class="farUnit">°F</a> |<a href="#" class="celUnit"
+                  >°C</a
+                ><br />
+              </div>
+              Mostly Cloudy<br />
+              <div class="currentDateTime">Sat | May 11 | 12:37</div>
+            </h3>
+            <h4>
+              <em>
+                Precip: 52%<br />
+                Humidity: 33%<br />
+                Wind: 8mph
+              </em>
+            </h4>
+          </div>
+        </div>
+
+        <hr />
+        <div class="row">
+          <div class="col">
+            <div class="upcoming">
+              <h4 class="weekDay"><strong>Sunday</strong></h4>
+              <div class="upcomingIcon">
+                <i class="fas fa-cloud-showers-heavy"></i>
+                <h4 class="tempCondition">61°F <br />Rainy</h4>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="upcoming">
+              <h4 class="weekDay"><strong>Monday</strong></h4>
+              <div class="upcomingIcon">
+                <i class="fas fa-cloud-sun"></i>
+                <h4 class="tempCondition">59°F <br />Cloudy</h4>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="upcoming">
+              <h4 class="weekDay"><strong>Tuesday</strong></h4>
+              <div class="upcomingIcon">
+                <i class="fas fa-poo-storm"></i>
+                <h4 class="tempCondition">78°F <br />Stormy</h4>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="upcoming">
+              <h4 class="weekDay"><strong>Wednesday</strong></h4>
+              <div class="upcomingIcon">
+                <i class="fas fa-sun"></i>
+                <h4 class="tempCondition">73°F <br />Sunny</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <p>
+          <a href="https://github.com/AbbeyNoreen/Vanilla-Weather-App">
+            Open-source code
+          </a>
+          by Abbey Noreen
+        </p>
+      </footer>
+    </div>
+    <script "index.js"></script>
   </body>
-</div>
-  <script src="index.js"></script>
 </html>
