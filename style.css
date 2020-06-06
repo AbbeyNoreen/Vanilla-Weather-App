@@ -1,3 +1,103 @@
+.weather-app {
+  font-family: 'Architects Daughter', cursive;
+  background-color: #607d8b;
+  margin: 15px;
+  padding: 8px;
+  width: 100%;
+  max-width: 750px;
+  border: solid #607d8b 1px;
+  border-radius: 7px;
+}
+.button {
+  display: inline-block;
+  width: 225px;
+  margin: 15px auto;
+  padding: 10px 15px;
+  border-radius: 7px;
+  position: relative;
+  left: 50px;
+  right: 65px;
+  color: #fff;
+  font-size: 25px;
+  background-color: #cddc39;
+  border: 1px solid #cddc39;
+}
+.button:hover {
+  color: #cddc39;
+  font-weight: bold;
+  background-color: #fff;
+  border: 1px solid #fff;
+  cursor: pointer;
+  transition: 250ms ease-out;
+}
+input {
+  display: block;
+  margin: 0px auto;
+  width: 550px;
+  padding: 10px 15px;
+  font-size: 18pt;
+  border-radius: 7px;
+}
 h1 {
-  color: lightseagreen;
+  color: #cfd8dc;
+  padding: 10px 15px;
+  display: block;
+}
+.currentWeather {
+  color: #cddc39;
+  font-size: 185px;
+  padding: 10px 15px;
+  display: block;
+}
+.currentTemperature,
+.farUnit,
+.celUnit {
+  text-decoration: none;
+  color: #cfd8dc;
+}
+.farUnit:hover {
+  color: #cddc39;
+  text-decoration: none;
+}
+.celUnit:hover {
+  color: #cddc39;
+  text-decoration: none;
+}
+
+h3 {
+  color: #cfd8dc;
+  padding: 10px 15px;
+  display: block;
+}
+h4 {
+  color: #cfd8dc;
+  padding: 10px 15px;
+  display: block;
+}
+hr {
+  border: 2.5px solid #fff;
+}
+.weekDay {
+  color: #cfd8dc;
+  padding: 10px 15px;
+}
+.tempCondition {
+  color: #cfd8dc;
+  padding: 10px 15px;
+}
+.upcomingIcon {
+  color: #cddc39;
+  font-size: 75px;
+  padding: 10px 15px;
+}
+.upcoming:hover {
+  background: #455a64;
+  border: 1px solid #455a64;
+  cursor: pointer;
+  transition: 400ms ease-out;
+}
+footer {
+  color: #212121;
+  font-size: 12pt;
+  font-family: 'Architects Daughter', cursive;
 }
