@@ -1,6 +1,10 @@
+//Time and Date
 let now = new Date();
 let hour = now.getHours();
 let minute = now.getMinutes();
+if (minute < 10) {
+  minute = `0${minute}`;
+}
 let date = now.getDate();
 let weekDay = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"];
 let day = weekDay[now.getDay()];
@@ -22,6 +26,7 @@ let month = months[now.getMonth()];
 let currentDateTime = document.querySelector(".currentDateTime");
 currentDateTime.innerHTML = `${day} | ${month} ${date} | ${hour}:${minute}`;
 
+//Search Button
 function search(event) {
   event.preventDefault();
   let newInput = document.querySelector("#city-form");
@@ -29,10 +34,20 @@ function search(event) {
   let cityName = document.querySelector("#city-form").value;
   updateCity.innerHTML = `${newInput.value}`;
 
+  //Temperature and Conversion
   function getNewTemp(response) {
     let temperatureNow = document.querySelector("#temp-value");
     let newTemp = Math.round(response.data.main.temp);
+    let descriptionNow = document.querySelector("#description");
+    let humidityNow = document.querySelector("#humidity");
+    let windNow = document.querySelector("#wind");
+    //let dateNow = document.querySelector(".currentDateTime");
+
     temperatureNow.innerHTML = `${newTemp}`;
+    descriptionNow.innerHTML = response.data.weather[0].description;
+    humidityNow.innerHTML = response.data.main.humidity;
+    windNow.innerHTML = Math.round(response.data.wind.speed);
+    //dateNow.innerHTML = "";
 
     function celTemp(event) {
       event.preventDefault();
@@ -64,6 +79,7 @@ function displayCurrentWeather(response) {
     response.data.main.temp
   );
 }
+//Current City Button
 function getPosition(position) {
   let apiKey = "ee003aab68bcab21af649210b2a07f93";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=imperial`;
