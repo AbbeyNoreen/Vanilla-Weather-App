@@ -3,12 +3,15 @@
   <head>
     <title>Weather App</title>
     <meta charset="UTF-8" />
-    <link href="styles.css" />
+    <link href="src/styles.css" />
     <script
       src="https://kit.fontawesome.com/efee7791c5.js"
       crossorigin="anonymous"
     ></script>
-<link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -16,7 +19,7 @@
       crossorigin="anonymous"
     />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="src/style.css" />
   </head>
 
   <body>
@@ -47,24 +50,20 @@
             </div>
           </div>
           <div class="col-6">
-            <h1 id="city">
-            Madison
-            </h1>
+            <h1 id="city"></h1>
             <h3>
               <div class="currentTemperature">
-                <span id="temp-value">66</span>
-                <a href="#" class="farUnit">°F</a> | <a href="#" class="celUnit"
-                  >°C</a
-                ><br />
+                <span id="temp-value"></span>
+                <a href="#" class="farUnit">°F</a> |
+                <a href="#" class="celUnit">°C</a><br />
               </div>
-              Mostly Cloudy<br />
-              <div class="currentDateTime">Sat | May 11 | 12:37</div>
+              <span id="description"> Mostly Cloudy</span><br />
+              <div class="currentDateTime"></div>
             </h3>
             <h4>
               <em>
-                Precip: 52%<br />
-                Humidity: 33%<br />
-                Wind: 8mph
+                Humidity: <span id="humidity"></span>%<br />
+                Wind: <span id="wind"></span>mph
               </em>
             </h4>
           </div>
@@ -119,6 +118,6 @@
         </p>
       </footer>
     </div>
-    <script "index.js"></script>
+    <script src="src/index.js"></script>
   </body>
 </html>
