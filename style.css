@@ -1,5 +1,5 @@
 .weather-app {
-  font-family: 'Architects Daughter', cursive;
+  font-family: "Architects Daughter", cursive;
   background-color: #607d8b;
   margin: 15px;
   padding: 8px;
@@ -19,6 +19,7 @@
   right: 65px;
   color: #fff;
   font-size: 25px;
+  font-weight: bold;
   background-color: #cddc39;
   border: 1px solid #cddc39;
 }
@@ -40,8 +41,10 @@ input {
 }
 h1 {
   color: #cfd8dc;
-  padding: 10px 15px;
+  padding: 5px 10px;
   display: block;
+  text-transform: capitalize;
+  font-size: 42px;
 }
 .currentWeather {
   color: #cddc39;
@@ -100,5 +103,5 @@ hr {
 footer {
   color: #212121;
   font-size: 12pt;
-  font-family: 'Architects Daughter', cursive;
+  font-family: "Architects Daughter", cursive;
 }
