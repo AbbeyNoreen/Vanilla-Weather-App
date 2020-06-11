@@ -1,30 +1,35 @@
 //Time and Date
-let now = new Date();
-let hour = now.getHours();
-let minute = now.getMinutes();
-if (minute < 10) {
-  minute = `0${minute}`;
+function getDateTime(timestamp) {
+  let now = new Date(timestamp);
+  let hour = now.getHours();
+  if (hour < 10) {
+    hour = `0${hour}`;
+  }
+  let minute = now.getMinutes();
+  if (minute < 10) {
+    minute = `0${minute}`;
+  }
+  let date = now.getDate();
+  let weekDay = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"];
+  let day = weekDay[now.getDay()];
+  let months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  let month = months[now.getMonth()];
+  let currentDateTime = document.querySelector(".currentDateTime");
+  currentDateTime.innerHTML = `${day} | ${month} ${date} | ${hour}:${minute}`;
 }
-let date = now.getDate();
-let weekDay = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"];
-let day = weekDay[now.getDay()];
-let months = [
-  "Jan",
-  "Feb",
-  "Mar",
-  "Apr",
-  "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Sep",
-  "Oct",
-  "Nov",
-  "Dec",
-];
-let month = months[now.getMonth()];
-let currentDateTime = document.querySelector(".currentDateTime");
-currentDateTime.innerHTML = `${day} | ${month} ${date} | ${hour}:${minute}`;
 
 //Search Button
 function search(event) {
@@ -41,13 +46,19 @@ function search(event) {
     let descriptionNow = document.querySelector("#description");
     let humidityNow = document.querySelector("#humidity");
     let windNow = document.querySelector("#wind");
-    //let dateNow = document.querySelector(".currentDateTime");
+    let dateNow = document.querySelector(".currentDateTime");
+    let iconNow = document.querySelector("#current-icon");
 
     temperatureNow.innerHTML = `${newTemp}`;
     descriptionNow.innerHTML = response.data.weather[0].description;
     humidityNow.innerHTML = response.data.main.humidity;
     windNow.innerHTML = Math.round(response.data.wind.speed);
-    //dateNow.innerHTML = "";
+    dateNow.innerHTML = getDateTime(response.data.dt * 1000);
+    iconNow.setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
+    iconNow.setAttribute("alt", response.data.weather[0].description);
 
     function celTemp(event) {
       event.preventDefault();
