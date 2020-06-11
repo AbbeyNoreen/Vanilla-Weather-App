@@ -46,11 +46,10 @@ h1 {
   text-transform: capitalize;
   font-size: 42px;
 }
-.currentWeather {
+#current-icon {
   color: #cddc39;
-  font-size: 185px;
+  font-size: 42px;
   padding: 10px 15px;
-  display: block;
 }
 .currentTemperature,
 .farUnit,
