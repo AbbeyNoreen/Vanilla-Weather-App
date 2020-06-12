@@ -2,9 +2,6 @@
 function getDateTime(timestamp) {
   let now = new Date(timestamp);
   let hour = now.getHours();
-  if (hour < 10) {
-    hour = `0${hour}`;
-  }
   let minute = now.getMinutes();
   if (minute < 10) {
     minute = `0${minute}`;
@@ -28,7 +25,7 @@ function getDateTime(timestamp) {
   ];
   let month = months[now.getMonth()];
   let currentDateTime = document.querySelector(".currentDateTime");
-  currentDateTime.innerHTML = `${day} | ${month} ${date} | ${hour}:${minute}`;
+  return `${day} | ${month} ${date} | ${hour}:${minute}`;
 }
 
 //Search Button
