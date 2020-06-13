@@ -93,9 +93,7 @@ hr {
   text-transform: capitalize;
 }
 .upcomingIcon {
-  color: #cddc39;
-  font-size: 75px;
-  padding: 10px 15px;
+  padding: 5px 10px;
 }
 .upcoming:hover {
   background: #455a64;
@@ -109,3 +107,4 @@ footer {
   font-family: "Architects Daughter", cursive;
   text-transform: capitalize;
 }
+
