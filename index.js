@@ -117,9 +117,10 @@ function getForecast(response) {
                 <img src="http://openweathermap.org/img/wn/${
                   forecast.weather[0].icon
                 }@2x.png" />
-                <h4 class="tempCondition">${Math.round(
+                <h4 class="tempCondition"> <span id="temp-value">${Math.round(
                   forecast.main.temp_max
-                )} °F <br /><em>${forecast.weather[0].description}</em></h4>
+                )} </span><a href="#" class="farUnit">°F</a>|<a href="#" class="celUnit">°C</a><br /><br />
+                <em>${forecast.weather[0].description}</em></h4>
               </div>
             </div>
             </div>`;
