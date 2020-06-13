@@ -27,6 +27,15 @@ function getDateTime(timestamp) {
   let currentDateTime = document.querySelector(".currentDateTime");
   return `${day} | ${month} ${date} | ${hour}:${minute}`;
 }
+//Forecast Time
+function formatHours(timestamp) {
+  let now = new Date(timestamp);
+  let hour = now.getHours();
+  let minute = now.getMinutes();
+  if (minute < 10) {
+    minute = `0${minute}`;
+  }
+}
 
 //Search Button
 function search(event) {
@@ -36,7 +45,6 @@ function search(event) {
   let cityName = document.querySelector("#city-form").value;
   updateCity.innerHTML = `${newInput.value}`;
 
-  //Temperature and Conversion
   function getNewTemp(response) {
     let temperatureNow = document.querySelector("#temp-value");
     let newTemp = Math.round(response.data.main.temp);
@@ -57,6 +65,7 @@ function search(event) {
     );
     iconNow.setAttribute("alt", response.data.weather[0].description);
 
+    //Toggle between F and C Temps
     function celTemp(event) {
       event.preventDefault();
       let celH3 = document.querySelector("#temp-value");
@@ -74,9 +83,13 @@ function search(event) {
     let far = document.querySelector(".farUnit");
     far.addEventListener("click", farTemp);
   }
+
   let apiKey = "ee003aab68bcab21af649210b2a07f93";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=imperial`;
   axios.get(`${apiUrl}&appid=${apiKey}`).then(getNewTemp);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&units=imperial`;
+  axios.get(`${apiUrl}&appid=${apiKey}`).then(getForecast);
 }
 let searchCity = document.querySelector("#search-button");
 searchCity.addEventListener("click", search);
@@ -86,6 +99,31 @@ function displayCurrentWeather(response) {
   document.querySelector("#temp-value").innerHTML = Math.round(
     response.data.main.temp
   );
+}
+//Display Forecast at Bottom
+function getForecast(response) {
+  let forecastNow = document.querySelector("#forecast-one");
+  forecastNow.innerHTML = null;
+  let forecast = null;
+
+  for (let index = 0; index < 4; index++) {
+    forecast = response.data.list[index];
+    forecastNow.innerHTML += `<div class="col">
+            <div class="upcoming">
+              <h4 class="weekDay"><strong>${formatHours(
+                forecast.dt * 1000
+              )}</strong></h4>
+              <div class="upcomingIcon">
+                <img src="http://openweathermap.org/img/wn/${
+                  forecast.weather[0].icon
+                }@2x.png" />
+                <h4 class="tempCondition">${Math.round(
+                  forecast.main.temp_max
+                )} °F <br /><em>${forecast.weather[0].description}</em></h4>
+              </div>
+            </div>
+            </div>`;
+  }
 }
 //Current City Button
 function getPosition(position) {
