@@ -90,6 +90,7 @@ hr {
 .tempCondition {
   color: #cfd8dc;
   padding: 10px 15px;
+  text-transform: capitalize;
 }
 .upcomingIcon {
   color: #cddc39;
@@ -106,4 +107,5 @@ footer {
   color: #212121;
   font-size: 12pt;
   font-family: "Architects Daughter", cursive;
+  text-transform: capitalize;
 }
