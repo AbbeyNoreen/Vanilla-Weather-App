@@ -21,8 +21,7 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="style.css" />
   </head>
-
-  <body>
+ <body>
     <div class="container">
       <div class="weather-app">
         <form id="search-form">
@@ -43,10 +42,10 @@
           </div>
         </div>
         <hr />
-    <div class="row">
+        <div class="row">
           <div class="col-6">
             <div class="currentWeather">
-              <img src="" alt="" id="current-icon" class="float-left" />
+              <img src="" alt="" id="current-icon" />
             </div>
           </div>
           <div class="col-6">
@@ -68,46 +67,8 @@
             </h4>
           </div>
         </div>
-
         <hr />
-        <div class="row">
-          <div class="col">
-            <div class="upcoming">
-              <h4 class="weekDay"><strong>Sunday</strong></h4>
-              <div class="upcomingIcon">
-                <i class="fas fa-cloud-showers-heavy"></i>
-                <h4 class="tempCondition">61°F <br />Rainy</h4>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="upcoming">
-              <h4 class="weekDay"><strong>Monday</strong></h4>
-              <div class="upcomingIcon">
-                <i class="fas fa-cloud-sun"></i>
-                <h4 class="tempCondition">59°F <br />Cloudy</h4>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="upcoming">
-              <h4 class="weekDay"><strong>Tuesday</strong></h4>
-              <div class="upcomingIcon">
-                <i class="fas fa-poo-storm"></i>
-                <h4 class="tempCondition">78°F <br />Stormy</h4>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="upcoming">
-              <h4 class="weekDay"><strong>Wednesday</strong></h4>
-              <div class="upcomingIcon">
-                <i class="fas fa-sun"></i>
-                <h4 class="tempCondition">73°F <br />Sunny</h4>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class="row" id="forecast-one"></div>
       </div>
       <footer>
         <p>
