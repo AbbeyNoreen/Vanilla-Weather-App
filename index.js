@@ -93,7 +93,7 @@ function searchLocation(event) {
 }
 
 let searchbutton = document.querySelector("#search-button");
-searchbutton.addEventListener("click", searchLocation);
+searchbutton.addEventListener("submit", searchLocation);
 
 //Current Weather Button
 function displayCurrentWeather(response) {
