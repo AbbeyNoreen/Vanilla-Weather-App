@@ -39,7 +39,7 @@ function formatHours(timestamp) {
 }
 
 //Search Button
-function search(event) {
+function searchLocation(event) {
   event.preventDefault();
   let newInput = document.querySelector("#city-form");
   let updateCity = document.querySelector("#city");
@@ -92,9 +92,10 @@ function search(event) {
   axios.get(apiUrl).then(getForecast);
 }
 
-let searchCity = document.querySelector("#search-button");
-searchCity.addEventListener("click", search);
+let searchbutton = document.querySelector("#search-button");
+searchbutton.addEventListener("click", searchLocation);
 
+//Current Weather Button
 function displayCurrentWeather(response) {
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temp-value").innerHTML = Math.round(
@@ -157,5 +158,5 @@ function currentPosition(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(getPosition);
 }
-let button = document.querySelector("#current-button");
-button.addEventListener("click", currentPosition);
+let currentbutton = document.querySelector("#current-button");
+currentbutton.addEventListener("click", currentPosition);
