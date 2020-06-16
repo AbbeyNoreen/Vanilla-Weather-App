@@ -92,7 +92,7 @@ function searchLocation(event) {
   axios.get(apiUrl).then(getForecast);
 }
 
-let searchbutton = document.querySelector("#search-button");
+let searchbutton = document.querySelector("#search-form");
 searchbutton.addEventListener("submit", searchLocation);
 
 //Current Weather Button
