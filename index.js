@@ -129,7 +129,7 @@ function getForecast(response) {
     forecast = response.data.list[index];
     forecastNow.innerHTML += `<div class="col">
             <div class="upcoming">
-              <h4 class="weekDay"><strong>${formatHours(
+              <h4 class="time"><strong>${formatHours(
                 forecast.dt * 1000
               )}</strong></h4>
               <div class="upcomingIcon">
